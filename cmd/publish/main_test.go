@@ -78,7 +78,7 @@ func TestPublishCommand(t *testing.T) {
 
 func testPublishCommandSuccess(t *testing.T, ctx *PublishCommandContext, publishClientMock *PublishClientMock) {
 	publishClientMock.On("PublishPolicies", mock.Anything, mock.Anything).Return(nil).Once()
-	err := publish(ctx, "../../internal/fixtures/policyAsCode/valid-schema.yaml")
+	err := publish(ctx, "../../internal/fixtures/policyAsCode/valid/valid-schema.yaml")
 	assert.Equal(t, nil, err)
 }
 

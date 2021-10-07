@@ -1,0 +1,10 @@
+apiVersion: v1
+customRules:
+  - identifier: restrict_kind
+    jsonSchema: '{"typqe"object","properties":{"kind":{"type":"string","enum":["Deployment","Ingress","Service"]}}}'
+policies:
+  - name: custom_rules_policy
+    isDefault: true
+    rules:
+      - identifier: restrict_kind
+        messageOnFailure: "manifests should be only of kind: `Deployment`, `Ingress`, `Service`"
